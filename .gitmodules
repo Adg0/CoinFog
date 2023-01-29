@@ -1,0 +1,3 @@
+[submodule "dapp-frontend"]
+	path = dapp-frontend
+	url = git@github.com:adapole/dapp-frontend
