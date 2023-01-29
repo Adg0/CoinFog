@@ -1,0 +1,4 @@
+*.swp
+*.msgp
+__pycache__/
+.env

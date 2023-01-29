@@ -1,0 +1,255 @@
+#pragma version 8
+txn ApplicationID
+int 0
+==
+bnz main_l27
+txn OnCompletion
+int DeleteApplication
+==
+bnz main_l26
+txn OnCompletion
+int UpdateApplication
+==
+bnz main_l25
+txna ApplicationArgs 0
+byte "deposit"
+==
+bnz main_l22
+txna ApplicationArgs 0
+byte "withdraw"
+==
+bnz main_l8
+txna ApplicationArgs 0
+byte "profit"
+==
+bnz main_l7
+err
+main_l7:
+txn Sender
+byte "Creator"
+app_global_get
+==
+assert
+byte "profit"
+int 0
+app_global_put
+itxn_begin
+int 0
+itxn_field Fee
+int pay
+itxn_field TypeEnum
+int 100000
+byte "profit"
+app_global_get
+*
+global MinTxnFee
+int 2
+*
+byte "profit"
+app_global_get
+*
+-
+itxn_field Amount
+byte "Creator"
+app_global_get
+itxn_field Receiver
+itxn_submit
+int 1
+return
+main_l8:
+byte "NF"
+box_len
+store 5
+store 4
+load 5
+!
+bnz main_l21
+main_l9:
+load 4
+int 32
+-
+store 3
+int 0
+store 6
+main_l10:
+load 6
+int 4800
+global MinTxnFee
+/
+<
+bnz main_l20
+int 0
+store 2
+main_l12:
+load 2
+load 3
+<
+bnz main_l17
+main_l13:
+byte "profit"
+byte "profit"
+app_global_get
+int 1
++
+app_global_put
+itxn_begin
+int pay
+itxn_field TypeEnum
+txn Sender
+itxn_field Receiver
+int 100000
+itxn_field Amount
+itxn_next
+int pay
+itxn_field TypeEnum
+txn NumAccounts
+int 0
+==
+bnz main_l16
+txna Accounts 1
+main_l15:
+itxn_field Receiver
+int 5000000
+int 100000
+int 100000
++
+-
+itxn_field Amount
+itxn_submit
+int 1
+return
+main_l16:
+txna Accounts 0
+b main_l15
+main_l17:
+byte "NF"
+load 2
+int 32
+box_extract
+global ZeroAddress
+==
+bnz main_l19
+byte "NF"
+load 2
+int 32
+box_extract
+txna ApplicationArgs 2
+sha256
+!=
+assert
+load 2
+int 1
++
+store 2
+b main_l12
+main_l19:
+byte "NF"
+load 2
+txna ApplicationArgs 2
+sha256
+box_replace
+b main_l13
+main_l20:
+itxn_begin
+int appl
+itxn_field TypeEnum
+int DeleteApplication
+itxn_field OnCompletion
+byte 0x068101
+itxn_field ApprovalProgram
+byte 0x068101
+itxn_field ClearStateProgram
+itxn_submit
+load 6
+int 1
++
+store 6
+b main_l10
+main_l21:
+byte "NF"
+int 992
+box_create
+assert
+b main_l9
+main_l22:
+byte "5algo"
+box_len
+store 1
+store 0
+load 1
+!
+bnz main_l24
+main_l23:
+byte "5algo"
+int 992
+box_create
+pop
+global GroupSize
+int 2
+>=
+gtxn 0 Receiver
+global CurrentApplicationAddress
+==
+&&
+gtxn 0 Amount
+int 5000000
+==
+&&
+assert
+byte "5algo"
+byte "next"
+app_global_get
+int 32
+*
+txna ApplicationArgs 1
+box_replace
+byte "next"
+byte "next"
+app_global_get
+int 1
++
+app_global_put
+byte "MerkelRoot"
+byte "MerkelRoot"
+app_global_get
+txna ApplicationArgs 1
+concat
+sha256
+app_global_put
+int 1
+return
+main_l24:
+byte "5algo"
+int 992
+box_create
+assert
+b main_l23
+main_l25:
+txn Sender
+byte "Creator"
+app_global_get
+==
+return
+main_l26:
+txn Sender
+byte "Creator"
+app_global_get
+==
+return
+main_l27:
+byte "Creator"
+txn Sender
+app_global_put
+byte "MerkelRoot"
+int 0
+itob
+sha256
+app_global_put
+byte "next"
+int 0
+app_global_put
+byte "profit"
+int 0
+app_global_put
+int 1
+return
