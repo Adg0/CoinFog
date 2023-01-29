@@ -1,4 +1,4 @@
-# Unstoppable Mixer Algorand
+# CoinFog: Unstoppable mixer
 
 ## Motivation
 
@@ -64,7 +64,7 @@ Txn.account[1] gets 5 Algo - relayFee - mixerFee
 - [x] Relay test
 - [x] Mixer contract
 - [x] Mixer test
-- [ ] Frontend wallet connect
+- [x] Frontend wallet connect
 - [ ] Documentation
 - [ ] Presentation
 
