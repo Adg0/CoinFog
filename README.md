@@ -77,7 +77,7 @@ Safety is taken to protect relay delegation; that is
 1. Rekey check
 2. Fee check
 3. Allows only application calls, specifically to mixer app
-4. On completion is restricted to NoOp
+4. On-completion is restricted to NoOp; because malicious actors might attack the relay by calling clearState on-completion and drain the funds of relay address.
 
 ### Depositing
 
@@ -107,6 +107,11 @@ Send Atomic transaction with:
 Txn.account[0] gets 100k microAlgo: that is the relay fee, anyone can create another relay to collect relay fees
 Txn.account[1] gets 5 Algo - relayFee - mixerFee
 ```
+
+### Profit
+
+Last part is taking profit from mixer contract.
+And the creator address can withdraw profits made, which is the `mixerFee` deducted when depositors withdraw their balance.
 
 ## Support
 
