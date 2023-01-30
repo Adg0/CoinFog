@@ -31,7 +31,7 @@ CoinFog has the following features on frontend:
 - user-friendly and visually appealing UI/UX design.
 - visual cues that deposit and withdrawal transactions have been detached.
 - allows users to connect to the frontend through various types of wallets.
-- frontend deployed on Fleek (IPFS), which means that users can run their own instance and bypass censorship efforts.
+- frontend deployed on [Fleek (IPFS)](https://jolly-poetry-7000.on.fleek.co/), which means that users can run their own instance and bypass censorship efforts.
 
 
 ## Motivation
