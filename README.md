@@ -27,10 +27,10 @@ The implementation of zk-proofs will enhance the security and privacy of the tra
 
 CoinFog has the following features on frontend:
 
-* user-friendly and visually appealing UI/UX design.
-* visual cues that deposit and withdrawal transactions have been detached.
-* allows users to connect to the frontend through various types of wallets.
-* frontend deployed on Flick (IPFS), which means that users can run their own instance and bypass censorship efforts.
+- user-friendly and visually appealing UI/UX design.
+- visual cues that deposit and withdrawal transactions have been detached.
+- allows users to connect to the frontend through various types of wallets.
+- frontend deployed on Fleek (IPFS), which means that users can run their own instance and bypass censorship efforts.
 
 ## Installation
 
@@ -49,12 +49,12 @@ $ pip install -r requirments.txt
 
 CoinFog is compatible with the following wallets:
 
-* Pera
-* Exodus
-* DeFly
-* AlgoSigner
-* MyAlgoWallet
-* WalletConnect
+- Pera
+- Exodus
+- DeFly
+- AlgoSigner
+- MyAlgoWallet
+- WalletConnect
 
 ## Motivation
 
@@ -121,7 +121,7 @@ If you are interested in contributing, please open a pull request on the [reposi
 
 CoinFog is open-source software licensed under the [MIT license](https://github.com/Adg0/CoinFog/blob/main/LICENSE).
 
-:warning: *Please note that CoinFog is a proof of concept, not to be used in production environment.*
+:warning: _Please note that CoinFog is a proof of concept, not to be used in production environment._
 
 ## ToDo
 
@@ -132,4 +132,3 @@ CoinFog is open-source software licensed under the [MIT license](https://github.
 - [x] Frontend wallet connect
 - [x] Documentation
 - [ ] Presentation
-
