@@ -12,10 +12,11 @@ This makes it difficult for someone to trace the origin or destination of a part
 CoinFog allows users to access decentralized applications (dApps) with greater privacy and security.
 Purpose of this platform is for:
 
-1. **Increased financial privacy**: to obscure the flow of funds between different addresses, making it more difficult for others to track an individual's or buisness's financial activity.
-2. **Avoidance of censorship**: to bypass censorship attempts by governments or other entities.
-3. **Protection against surveillance**: to protect against surveillance by government agencies or other entities, helping to preserve privacy and autonomy.
-4. **Transactions that require privacy**: such as medical expenses and anonymous donations, all transactions considered sensitive.
+1. **Increased financial privacy**: to obscure the flow of funds between different addresses, making it more difficult for others to track an individual's or business's financial activity from prying eyes.
+2. **Avoidance of censorship**: to bypass censorship attempts by centralized entities.
+3. **Protection against surveillance**: another layer of secrecy against surveillance by centralized agencies or other entities, helping to preserve privacy and autonomy.
+4. **Hiding Business Expenses**: Businesses can keep their expenses private and protected, such as medical expenses and anonymous donations
+without fear of their information being leaked.
 
 ## Features
 
@@ -32,6 +33,13 @@ CoinFog has the following features on frontend:
 - allows users to connect to the frontend through various types of wallets.
 - frontend deployed on Fleek (IPFS), which means that users can run their own instance and bypass censorship efforts.
 
+
+## Motivation
+
+https://www.reddit.com/r/AlgorandOfficial/comments/prs7b8/private_transactions_in_algorand/
+![reddit post about anonymity](./docs/um_reddit.png)
+![reddit response on post](./docs/um_reddit_resp.png)
+
 ## Installation
 
 Clone the [repository](https://github.com/Adg0/CoinFog) and follow follow this steps:
@@ -42,7 +50,7 @@ $ cd CoinFog
 $ mv .env.example .env
 $ vim .env
 // change variables
-$ pip install -r requirments.txt
+$ pip install -r requirements.txt
 ```
 
 ## Compatibility
@@ -56,11 +64,20 @@ CoinFog is compatible with the following wallets:
 - MyAlgoWallet
 - WalletConnect
 
-## Motivation
+## Tech Stack
 
-https://www.reddit.com/r/AlgorandOfficial/comments/prs7b8/private_transactions_in_algorand/
-![reddit post about anonymity](./docs/um_reddit.png)
-![reddit response on post](./docs/um_reddit_resp.png)
+CoinFog is built with the following technologies:
+
+- PyTeal: PyTeal is used to implement smart contracts.
+
+- Python AlgoSdk: Python AlgoSdk is used to interact with the Algorand network.
+
+- NextJS: NextJS is used for the frontend framework.
+
+- TailwindCss: Tailwind is used for styling the application.
+
+- Fleek: Fleek is used for hosting the application.
+
 
 ## Architecture
 
